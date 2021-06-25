@@ -1,23 +1,15 @@
 {% extends 'base.html'%} 
-{% import 'macros.html' as macro %} 
 {% block content%}
 <div class="container">
     <div class="row home-blogs">
         
         <div class="col-md-9 all-blogs">
         <h2 class="title-blogs">Posted Blogs</h2>
-        {{macro.displayAllBlogs(all_blogs)}}
+        <form action="{{url_for('main.new_blog')}}">
+          <button type="submit">New Post</button>
+        </form>
         </div>
 
-        <!-- <div class="col-md-3">
-            <h4 class="text-left">
-                <a class="btn btn-primary" href="/add/category">
-                <span class="glyphicon glyphicon-plus add" aria-hidden="true">Categories</span></a>  
-            </h4>
-            <ol class="category-list">
-            {{ macro.displayCategoryList(categories) }}
-            </ol>
-        </div> -->
-    </div>
+      </div>
 </div>
 {% endblock %} 

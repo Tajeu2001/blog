@@ -11,6 +11,7 @@ class Config:
     # simple mde  configurations
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
+    QUOTE_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
 
     # email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
@@ -21,11 +22,13 @@ class Config:
 
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL", "")
+    if SQLALCHEMY_DATABASE_URI.startswith("postgres://"):
+        SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgres://", "postgresql://", 1)
 
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://postgres:access@localhost/perblog'
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:siantayo15@localhost/blog'
 
     DEBUG = True
 
@@ -38,4 +41,5 @@ class TestConfig(Config):
 config_options = {
 'development':DevConfig,
 'production':ProdConfig,
+'test':TestConfig
 }

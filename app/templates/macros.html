@@ -1,11 +1,11 @@
 
 
 {% macro displayAllBlogs(blogs) %}
-    {% for blog in blogs %}
+    {% for post in blogs %}
         <div class="row my-blogs">
             <div class="col-md-12">
-                <h4>{{blog.user.username}}</h4>
-                <p>{{blog.content}}</p>
+                <h4>{{post.user.username}}</h4>
+                <p>{{post.content}}</p>
                 <p><a class="btn btn-info" href="{{url_for('.comment',id=blog.id)}}"> Add your comment</a></p>
             </div>
         </div>
