@@ -1,20 +1,19 @@
-{% extends 'bootstrap/base.html' %}
-<!DOCTYPE html>
+{% extends 'bootstrap/base.html' %}  
 
-<html>
-    <head>
-    </head>
-    <body>    
-        {% block content %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+{% endblock %}
 
-        {% endblock%}
 
-    
+{% block navbar %}
+<!--include control block to include navbar.html file-->
+{% include 'navbar.html' %}
+{% endblock %}
 
-        {% block navbar %}
-            <!--include control block to include navbar.html file-->
-            {% include 'navbar.html' %}
-        {% endblock %}
+{% block content %}
 
-    </body>
-</html>
+{% endblock%}
+
+
+
