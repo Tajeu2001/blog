@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Viaoda+Libre&display=swap');
+body{
+  background-image: url('../images/bernard-hermant-X-Bu9X6gok0-unsplash\ \(1\).jpg') ;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: rgba(243, 219, 174, 0.712);
+  height: 100vh;
+  background-blend-mode:lighten;
+  font-family: 'Viaoda Libre', cursive;
+  letter-spacing: 2px;  
+  font-weight: 700;
+}
+
+/* .navbar {
+  background-color: rgb(43, 20, 4) ;
+  height:90px;
+  color:white;
+  padding:20px;
+
+}
+
+.sign {
+  color:white;
+  font-size: 40px;
+  margin-right: 40px;
+}
+
+.post {
+  color: white;
+  font-size: 70px;
+  font-weight: 900;
+  margin-left: 10%;
+}
+
+.home {
+  font-size: 40px;
+  color:white;
+  padding-left: 30px;
+  text-decoration: underline;
+  margin-right: 30px;
+}
+
+.username {
+  color:white;
+  font-size: 40px;
+  margin-right: 60px;
+  padding-top:15px;
+}
+
+.quote-author{
+  font-size: 40px;
+  color: brown;
+  font-weight: 700;
+  
+  
+}
+.quote{
+  font-size: 35px;
+  color: rgb(36, 35, 35);
+  font-weight: 700;
+  margin-top: 8%;
+
+}
+
+.post-title {
+  font-size: 30px;
+}
+.title-blogs{
+  color: rgb(24, 11, 2);
+  margin-top: 3%;
+  font-size: 50px;
+  text-decoration: underline;
+  font-weight: 900;
+  color:rgb(24, 11, 2);
+}
+.post-content {
+
+}
+
+.newpost {
+  width:30%;
+  background-color: brown;
+  color: white;
+  font-size: 30px;
+  padding: 5px;
+  margin:5%;
+
+}
+
+.login{
+  font-size: 30px; */
+}
+
+.reg{
+  font-size: 30px;
+}
+
+.article {
+  font-size: 40px;
+}
+
+.post-link {
+  font-size: 40px;
+  padding-top: 40px;
+}
+
+.post-link a:hover {
+  color:brown;
+}
+
+.content {
+  font-size: 30px;
+  color: rgb(24, 11, 2);
+  font-weight: 700;
+}
