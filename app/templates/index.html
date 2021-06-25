@@ -2,19 +2,22 @@
 {% block content%}
 <div class="container">
     <div class="row home-blogs">
+      
         <div>
-          <p>{{quote.quote}}</p>
-          <p>{{quote.author}}</p>
+          <p class="quote">{{quote.quote}}</p>
+          <p class="quote-author">~~{{quote.author}}~~</p>
           
         </div>
-        <div class="col-md-9 all-blogs">
-        <h2 class="title-blogs">Posted Blogs</h2>
+
         <form action="{{url_for('main.new_blog')}}">
-          <button type="submit">New Post</button>
+          <button class="newpost" type="submit">Add New Post</button>
         </form>
+        <div class="col-md-9 all-blogs">
+        <h2 class="title-blogs">POSTED BLOGS</h2>
+        
         {%for post in posts %}
-        <h3><a href="{{url_for('main.post', id=post.id)}}">{{post.title}}</a></h3>
-        <p>{{post.content | truncate(300)}}</p>
+        <h3 class="post-link"><a href="{{url_for('main.post', id=post.id)}}">{{post.title}}</a></h3>
+        <p class="content">{{post.content | truncate(300)}}</p>
         {% endfor%}
         </div>
 
