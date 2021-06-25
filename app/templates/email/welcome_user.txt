@@ -1,1 +1,3 @@
-Hello {{user.username}}
+Hello {{user.username}},
+ 
+Welcome here!
