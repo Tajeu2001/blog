@@ -1,7 +1,10 @@
+{% extends 'base.html'%}
 {% import "bootstrap/wtf.html" as wtf%}
-<h3> {{post.title}} </h3>
-<p>{{post.content}}</p>
-<div>
+{%block content%}
+<div class="container article">
+<h3 class="post-title"> {{post.title}} </h3>
+<p class="post-content">{{post.content}}</p>
+<div >
   {{wtf.quick_form(form)}}
 </div>
 {%for comment in comments%}
@@ -11,4 +14,7 @@
 <div>
   {{comment.user.username}}
 </div>
+</div>
 {%endfor%}
+
+{%endblock%}
