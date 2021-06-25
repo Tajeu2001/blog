@@ -26,8 +26,21 @@ def new_blog():
     
     return render_template('new_blog.html',form = form) 
 
+@main.route('/article/<int:id>', methods = ['GET', 'POST'])
+def post(id):
 
+    post = Post.query.filter_by(id=id).first()
+    title = post.title
+    form = CommentForm()
+    comments = Comment.get_comments(id)
 
+    if form.validate_on_submit():
+        new_comment = Comment(comment=form.comment.data, user=current_user, post=post)
+        if new_comment.comment:
+            new_comment.save_comment()
+        return redirect(request.referrer)
+
+    return render_template('blog.html', title=title, post=post)
 
 @main.route('/user/<username>')
 def user(username):
@@ -37,23 +50,4 @@ def user(username):
     return render_template('user.html', user=user, posts=posts)
 
 
-# @main.route('/write_comment/<int:id>', methods=['GET', 'POST'])
-# @login_required
-# def post_comment(id):
-#     """ 
-#     Function to post comments 
-#     """
-    
-#     form = CommentForm()
-#     title = 'post comment'
-#     post  = Post.query.filter_by(id=id).first()
 
-#     if Post is None:
-#         abort(404)
-
-#     if form.validate_on_submit():
-#         opinion = form.opinion.data
-#         new_comment = Comments(opinion = opinion, user_id = current_user.id, pitches_id = pitches.id)
-#         new_comment.save_comment()
-
-#     return render_template('comment.html', comment_form = form, title = title)

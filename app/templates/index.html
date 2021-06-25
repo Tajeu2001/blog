@@ -8,6 +8,10 @@
         <form action="{{url_for('main.new_blog')}}">
           <button type="submit">New Post</button>
         </form>
+        {%for post in posts %}
+        <h3><a href="{{url_for('main.post', id=post.id)}}">{{post.title}}</a></h3>
+        <p>{{post.content | truncate(300)}}</p>
+        {% endfor%}
         </div>
 
       </div>
