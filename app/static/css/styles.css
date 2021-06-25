@@ -75,9 +75,7 @@ body{
   font-weight: 900;
   color:rgb(24, 11, 2);
 }
-.post-content {
 
-}
 
 .newpost {
   width:30%;
@@ -90,7 +88,7 @@ body{
 }
 
 .login{
-  font-size: 30px; */
+  font-size: 30px; 
 }
 
 .reg{
