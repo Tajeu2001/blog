@@ -19,12 +19,12 @@ def index():
 def new_blog():
     form = BlogForm()
     if form.validate_on_submit():
-        post = Post(title = form.title.data, content = form.post.data)
-        db.session.add(post)
-        db.session.commit()
+        new_post = Post(title = form.title.data, content = form.post.data, user=current_user)
+        new_post.save_post()
+        post = Post.query.filter_by(title=new_post.title).first()
         return redirect(url_for('main.index'))
     
-    return render_template('post.html',form = form ,post=post) 
+    return render_template('new_blog.html',form = form) 
 
 
 

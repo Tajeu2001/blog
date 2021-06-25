@@ -4,8 +4,8 @@ from wtforms.validators import Required,Email,ValidationError
 
 
 class BlogForm(FlaskForm):
-    title = TextAreaField('Your name',validators = [Required()])
-    content = TextAreaField('post',validators = [Required()])
+    title = TextAreaField('Blog Title',validators = [Required()])
+    post = TextAreaField('Content',validators = [Required()])
     submit = SubmitField('Submit')
 
 
