@@ -2,7 +2,11 @@
 {% block content%}
 <div class="container">
     <div class="row home-blogs">
-        
+        <div>
+          <p>{{quote.quote}}</p>
+          <p>{{quote.author}}</p>
+          
+        </div>
         <div class="col-md-9 all-blogs">
         <h2 class="title-blogs">Posted Blogs</h2>
         <form action="{{url_for('main.new_blog')}}">
@@ -13,6 +17,7 @@
         <p>{{post.content | truncate(300)}}</p>
         {% endfor%}
         </div>
+
 
       </div>
 </div>

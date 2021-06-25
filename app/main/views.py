@@ -6,13 +6,15 @@ from .forms import BlogForm,UpdateProfile,CommentForm
 from .. models import User,Post,Comment
 from ..email import mail_message
 from .. import db
+from ..requests import get_random_quote
 
 
 @main.route('/')
 def index():
     posts = Post.query.all()
     title = "post"
-    return render_template('index.html',posts=posts, title = title)
+    quote = get_random_quote()
+    return render_template('index.html',posts=posts, title = title, quote=quote)
 
 @main.route('/new/post', methods = ['GET','POST'])
 @login_required

@@ -11,8 +11,15 @@ def configure_request(app):
 
 def get_random_quote():
   with urllib.request.urlopen(base_url) as url:
+        quote_data = url.read()
+        quote_response = json.loads(quote_data)
 
-    quote_data = url.read()
-    quote_response = json.loads(quote_data)
+        if quote_response:
+            author = quote_response.get('author')
+            id = quote_response.get('id')
+            quote = quote_response.get('quote')
 
-  return quote_response
+            quote = Quote(id, author, quote)
+            return quote
+
+  return Quote(1, "Rosemary Tajeu", "Protect your peace.")
