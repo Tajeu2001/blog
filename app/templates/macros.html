@@ -1,0 +1,14 @@
+
+
+{% macro displayAllBlogs(blogs) %}
+    {% for blog in blogs %}
+        <div class="row my-blogs">
+            <div class="col-md-12">
+                <h4>{{blog.user.username}}</h4>
+                <p>{{blog.content}}</p>
+                <p><a class="btn btn-info" href="{{url_for('.comment',id=blog.id)}}"> Add your comment</a></p>
+            </div>
+        </div>
+    {% endfor %}
+{% endmacro %}
+
