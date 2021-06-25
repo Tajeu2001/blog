@@ -40,14 +40,8 @@ def post(id):
             new_comment.save_comment()
         return redirect(request.referrer)
 
-    return render_template('blog.html', title=title, post=post)
+    return render_template('blog.html', title=title, post=post, comments=comments, form=form)
 
-@main.route('/user/<username>')
-def user(username):
-    user = User.query.filter_by(username=username).first_or_404()
-    page = request.args.get('page', 1, type=int)
-    
-    return render_template('user.html', user=user, posts=posts)
 
 
 

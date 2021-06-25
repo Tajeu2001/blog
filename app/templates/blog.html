@@ -1,1 +1,14 @@
+{% import "bootstrap/wtf.html" as wtf%}
 <h3> {{post.title}} </h3>
+<p>{{post.content}}</p>
+<div>
+  {{wtf.quick_form(form)}}
+</div>
+{%for comment in comments%}
+<div>
+  {{comment.comment}}
+</div>
+<div>
+  {{comment.user.username}}
+</div>
+{%endfor%}
