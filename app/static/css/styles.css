@@ -13,7 +13,7 @@ body{
   font-weight: 700;
 }
 
-/* .navbar {
+.navbar {
   background-color: rgb(43, 20, 4) ;
   height:90px;
   color:white;
@@ -26,7 +26,7 @@ body{
   font-size: 40px;
   margin-right: 40px;
 }
-
+/*
 .post {
   color: white;
   font-size: 70px;
