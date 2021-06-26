@@ -19,6 +19,7 @@ Python3.8
 Flask
 
 ## Live link
+https://intense-ravine-10404.herokuapp.com
 
 ## Contact details
 Email: tajeusanta7@gmail.com
