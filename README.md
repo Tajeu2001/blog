@@ -1,4 +1,4 @@
-# Peronal-Blog
+# Personal-Blog
 
 ## Author
 Rosemary Siantayo Tajeu
