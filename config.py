@@ -32,14 +32,9 @@ class DevConfig(Config):
 
     DEBUG = True
 
-class TestConfig(Config):
-    '''
-    child test configuration class
-    '''
-    pass
+
 
 config_options = {
 'development':DevConfig,
-'production':ProdConfig,
-'test':TestConfig
+'production':ProdConfig
 }
