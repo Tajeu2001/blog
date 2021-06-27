@@ -18,7 +18,9 @@
         {%for post in posts %}
         <h3 class="post-link"><a href="{{url_for('main.post', id=post.id)}}">{{post.title}}</a></h3>
         <p class="content">{{post.content | truncate(300)}}</p>
+        <hr>
         {% endfor%}
+        
         </div>
 
 
