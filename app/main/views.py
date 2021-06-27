@@ -7,7 +7,8 @@ from .. models import User,Post,Comment
 from ..email import mail_message
 from .. import db
 from ..requests import get_random_quote
-
+from flask.globals import request
+from werkzeug.utils import redirect
 
 @main.route('/')
 def index():
@@ -44,6 +45,19 @@ def post(id):
 
     return render_template('blog.html', title=title, post=post, comments=comments, form=form)
 
+@main.route('/delete/<int:id>', methods=['GET', 'POST'])
+def delete(id):
+    post = Post.query.filter_by(id=id).first_or_404()
+    db.session.delete(post)
+    db.session.commit()
+    return redirect(url_for('main.index'))
+
+@main.route('/post/<id>/comment/delete', methods = ['GET', 'POST'])
+def deleteComment(id):
+    comment = Comment.query.filter_by(id=id).first()
+    db.session.delete(comment)
+    db.session.commit()
+    return redirect(request.referrer)
 
 
 

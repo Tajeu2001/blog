@@ -2,19 +2,24 @@
 {% import "bootstrap/wtf.html" as wtf%}
 {%block content%}
 <div class="container article">
-<h3 class="post-title"> {{post.title}} </h3>
-<p class="post-content">{{post.content}}</p>
-<div >
-  {{wtf.quick_form(form)}}
+  <h3 class="posttitle"> {{post.title}} </h3>
+  <hr>
+  <p class="post-content">{{post.content}}</p>
+  <div >
+    {{wtf.quick_form(form)}}
+  </div>
+  {% for comment in comments %}
+  <div class=" container p-3 comment">
+    <p>{{ comment.comment }}</p>
+    <a class="text-danger" href="{{ url_for('main.deleteComment', id=comment.id) }}">Delete</a>
+  </div>
+  <div class="container comment">
+    {{comment.user.username}}
+  </div>
+  <hr>
 </div>
-{%for comment in comments%}
-<div>
-  {{comment.comment}}
-</div>
-<div>
-  {{comment.user.username}}
-</div>
-</div>
-{%endfor%}
+
+
+{% endfor %}
 
 {%endblock%}

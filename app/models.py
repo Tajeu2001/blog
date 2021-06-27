@@ -99,6 +99,12 @@ class Comment(db.Model):
     def save_comment(self):
         db.session.add(self)
         db.session.commit()
+    @classmethod
+
+    def delete_comment(cls, id):
+        comment = cls.query.filter_by(id=id).first()
+        db.session.delete(comment)
+        db.session.commit()    
 
     @classmethod
     def get_comments(cls, id):
